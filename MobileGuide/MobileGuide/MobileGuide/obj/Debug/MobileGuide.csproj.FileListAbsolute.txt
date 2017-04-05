@@ -1,0 +1,17 @@
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\MobileGuide.dll
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\MobileGuide.pdb
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\Xamarin.Forms.Core.dll
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\Xamarin.Forms.Platform.dll
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\Xamarin.Forms.Xaml.dll
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\Xamarin.Forms.Core.pdb
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\Xamarin.Forms.Core.xml
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\Xamarin.Forms.Platform.pdb
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\Xamarin.Forms.Xaml.pdb
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\Xamarin.Forms.Xaml.xml
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.csprojResolveAssemblyReference.cache
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.MainPage.xaml.g.cs
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.App.xaml.g.cs
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.dll
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.pdb
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.dll.mdb
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\MobileGuide.dll.mdb

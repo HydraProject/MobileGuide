@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MobileGuide"
+             x:Class="MobileGuide.MainPage">
+
+    <Grid BackgroundColor="Aqua"
+          HorizontalOptions="Fill"
+          VerticalOptions="Fill">
+        <Label Text="Welcome to " 
+           VerticalOptions="Start" 
+               Grid.Column="0"
+           HorizontalOptions="Center">
+        </Label>
+        <Button Text="PUSH" 
+            VerticalOptions="StartAndExpand"
+            Grid.Column="1"
+            HorizontalOptions="CenterAndExpand"/>
+    </Grid>
+
+    
+
+</ContentPage>    
