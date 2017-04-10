@@ -11,7 +11,68 @@ namespace MobileGuide
     {
         public MainPage()
         {
-            InitializeComponent();
+            Label header = new Label
+            {
+                Text = "Мобильный Гид",
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            var layout = new StackLayout()
+            {
+                Orientation = StackOrientation.Horizontal
+            };
+            TableView tableView = new TableView
+            {
+                BackgroundColor = Color.Black,
+                Intent = TableIntent.Form,
+                Root = new TableRoot
+                {
+                    new TableSection
+                    {
+                        new ImageCell
+                        {
+                            ImageSource = ImageSource.FromResource("MobileGuide.logo.png"),
+                            TextColor = Color.White,
+                            DetailColor = Color.White,
+                            Text = "This is an ImageCell",
+                            Detail = "This is some detail text",
+                        },
+                        createTableElem("piu")
+                    }
+                },
+                VerticalOptions = LayoutOptions.FillAndExpand                
+            };
+
+            
+
+            // Accomodate iPhone status bar.
+            this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
+
+            // Build the page.
+            this.Content = new StackLayout
+            {
+                Children =
+                {
+                    header,
+                    tableView
+                }
+            };
+        }
+        private TableSection createTableElem( string text)
+        {
+            TableSection result = new TableSection
+            {
+                new ImageCell
+                        {
+                            ImageSource = ImageSource.FromResource("MobileGuide.logo.png"),
+                            TextColor = Color.White,
+                            DetailColor = Color.White,
+                            Text = text,
+                            Detail = "This is some detail text",
+                        }
+            };
+            return result;
         }
     }
 }
