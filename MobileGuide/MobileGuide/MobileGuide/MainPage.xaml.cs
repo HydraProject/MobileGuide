@@ -22,6 +22,12 @@ namespace MobileGuide
             {
                 Orientation = StackOrientation.Horizontal
             };
+
+            async Task table_Elem_Click()
+            {
+                await Navigation.PushModalAsync(new GuidePage());
+            }
+
             TableView tableView = new TableView
             {
                 BackgroundColor = Color.Black,
@@ -37,6 +43,7 @@ namespace MobileGuide
                             DetailColor = Color.White,
                             Text = "This is an ImageCell",
                             Detail = "This is some detail text",
+                            Command = new Command(async () => await table_Elem_Click())
                         },
                         createTableElem("piu")
                     }
@@ -44,10 +51,8 @@ namespace MobileGuide
                 VerticalOptions = LayoutOptions.FillAndExpand                
             };
 
-            
-
             // Accomodate iPhone status bar.
-            this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
+            this.Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0);
 
             // Build the page.
             this.Content = new StackLayout
@@ -61,7 +66,8 @@ namespace MobileGuide
         }
         private TableSection createTableElem( string text)
         {
-            TableSection result = new TableSection
+            //Да, так работает
+            return new TableSection
             {
                 new ImageCell
                         {
@@ -69,10 +75,10 @@ namespace MobileGuide
                             TextColor = Color.White,
                             DetailColor = Color.White,
                             Text = text,
-                            Detail = "This is some detail text",
+                            Detail = "Путеводитель",
                         }
             };
-            return result;
+            
         }
     }
 }

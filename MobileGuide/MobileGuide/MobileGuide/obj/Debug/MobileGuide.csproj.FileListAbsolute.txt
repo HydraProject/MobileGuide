@@ -13,5 +13,9 @@ E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.Ma
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.App.xaml.g.cs
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.pdb
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\SlideOverKit.dll
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\SlideOverKit.pdb
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.dll.mdb
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\MobileGuide.dll.mdb
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.dll.mdb
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\MobileGuide.dll.mdb

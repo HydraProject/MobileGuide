@@ -3,6 +3,8 @@ E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\androi
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\FormsViewGroup.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\ModernHttpClient.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\OkHttp.dll
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\SlideOverKit.dll
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\SlideOverKit.Droid.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\Xamarin.Android.Support.Animated.Vector.Drawable.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\Xamarin.Android.Support.Design.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\Xamarin.Android.Support.v4.dll

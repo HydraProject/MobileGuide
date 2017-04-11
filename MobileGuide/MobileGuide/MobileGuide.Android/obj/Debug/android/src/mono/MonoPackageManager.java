@@ -103,6 +103,8 @@ class MonoPackageManager_Resources {
 		"FormsViewGroup.dll",
 		"ModernHttpClient.dll",
 		"OkHttp.dll",
+		"SlideOverKit.dll",
+		"SlideOverKit.Droid.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Design.dll",
 		"Xamarin.Android.Support.v4.dll",

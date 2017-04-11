@@ -4,12 +4,14 @@
   <ResolvedResourceDirectories>
     <ResolvedResourceDirectory>E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\__library_projects__\FlatUI\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\__library_projects__\ModernHttpClient\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\__library_projects__\SlideOverKit.Droid\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\FlatUI\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\ModernHttpClient\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\SlideOverKit.Droid\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
@@ -17,6 +19,7 @@
   <ResolvedResourceDirectoryStamps>
     <ResolvedResourceDirectoryStamp>E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\__library_projects__\FlatUI.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\__library_projects__\ModernHttpClient.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\__library_projects__\SlideOverKit.Droid.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
