@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -9,76 +8,122 @@ namespace MobileGuide
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        public class TodoItem : INotifyPropertyChanged
         {
-            Label header = new Label
-            {
-                Text = "Мобильный Гид",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-                HorizontalOptions = LayoutOptions.Center
-            };
 
-            var layout = new StackLayout()
-            {
-                Orientation = StackOrientation.Horizontal
-            };
+            public event PropertyChangedEventHandler PropertyChanged;
 
-            async Task table_Elem_Click()
+            
+            string _name;
+            public string Name
             {
-                await Navigation.PushModalAsync(new GuidePage());
+                get { return _name; }
+                set
+                {
+                    if (value.Equals(_name, StringComparison.Ordinal))
+                    {
+                        // Nothing to do - the value hasn't changed;
+                        return;
+                    }
+                    _name = value;
+                    OnPropertyChanged();
+                }
             }
 
-            TableView tableView = new TableView
+            void OnPropertyChanged([CallerMemberName] string propertyName = null)
             {
-                BackgroundColor = Color.Black,
-                Intent = TableIntent.Form,
-                Root = new TableRoot
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        event PropertyChangedEventHandler GuideChanged;
+
+        public MainPage()
+        {
+
+
+
+            var _todoItem = new TodoItem();
+
+
+            async Task open_Guides_Catalog()
+            {
+                try
                 {
-                    new TableSection
-                    {
-                        new ImageCell
-                        {
-                            ImageSource = ImageSource.FromResource("MobileGuide.logo.png"),
-                            TextColor = Color.White,
-                            DetailColor = Color.White,
-                            Text = "This is an ImageCell",
-                            Detail = "This is some detail text",
-                            Command = new Command(async () => await table_Elem_Click())
-                        },
-                        createTableElem("piu")
-                    }
-                },
-                VerticalOptions = LayoutOptions.FillAndExpand                
+                    await Navigation.PushModalAsync(new GuidesPage());
+                }
+                catch (Exception e)
+                {
+                    await DisplayAlert("error", e.Message, "cancer");
+                }
+            }
+
+            Image attic = new Image
+            {
+                Source = ImageSource.FromResource("MobileGuide.images.logo.png"),
+                HeightRequest = 100,
+                WidthRequest = 100
             };
 
-            // Accomodate iPhone status bar.
-            this.Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0);
+            Button openCatalog = new Button
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Text = "Open guides Catalog",
+                Command = new Command(async () => await open_Guides_Catalog())
+            };
 
-            // Build the page.
-            this.Content = new StackLayout
+            Label header = new Label
+            {
+                Text = "Hello Page",
+                FontSize = 13.5,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Start
+            };
+
+            Label info = new Label
+            {
+                Text = _todoItem.Name
+            };
+
+            info.SetBinding(Label.TextProperty, "CurrentGuide");
+
+            info.BindingContext = Application.Current.Properties;
+
+            var label = new Label();
+            label.Text = "0";
+            label.SetBinding(Label.TextProperty, "Name");
+            label.BindingContext = new { Name = CheckGuide() };
+
+
+
+            //+= (sender, ea) =>
+            //{
+            //    label.Text = CheckGuide();
+            //};
+
+            Content = new StackLayout
             {
                 Children =
                 {
+                    attic,
                     header,
-                    tableView
+                    openCatalog,
+                    info,
+                    label
                 }
             };
         }
-        private TableSection createTableElem( string text)
+
+        //Если есть записанный гид - возвращаем его имя
+        //Если нет - пишем "none"
+        private string CheckGuide()
         {
-            //Да, так работает
-            return new TableSection
+            if(!Application.Current.Properties.TryGetValue("CurrentGuide",out object result))
             {
-                new ImageCell
-                        {
-                            ImageSource = ImageSource.FromResource("MobileGuide.logo.png"),
-                            TextColor = Color.White,
-                            DetailColor = Color.White,
-                            Text = text,
-                            Detail = "Путеводитель",
-                        }
-            };
-            
+                return "none";
+            }
+            return result.ToString();
         }
     }
 }
