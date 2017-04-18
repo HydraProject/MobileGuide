@@ -8,49 +8,16 @@ namespace MobileGuide
 {
     public partial class MainPage : ContentPage
     {
-        public class TodoItem : INotifyPropertyChanged
-        {
+        static int secret = 0;
 
-            public event PropertyChangedEventHandler PropertyChanged;
-
-            
-            string _name;
-            public string Name
-            {
-                get { return _name; }
-                set
-                {
-                    if (value.Equals(_name, StringComparison.Ordinal))
-                    {
-                        // Nothing to do - the value hasn't changed;
-                        return;
-                    }
-                    _name = value;
-                    OnPropertyChanged();
-                }
-            }
-
-            void OnPropertyChanged([CallerMemberName] string propertyName = null)
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        event PropertyChangedEventHandler GuideChanged;
-
+        public Options _potato = new Options();
         public MainPage()
         {
-
-
-
-            var _todoItem = new TodoItem();
-
-
             async Task open_Guides_Catalog()
             {
                 try
                 {
-                    await Navigation.PushModalAsync(new GuidesPage());
+                    await Navigation.PushModalAsync(new GuidesPage(this));
                 }
                 catch (Exception e)
                 {
@@ -58,49 +25,62 @@ namespace MobileGuide
                 }
             }
 
+            Application.Current.PropertyChanged += (sender, args) =>
+            {
+                  _potato.Namechange(CheckGuide());
+            };
+
+            var tapTap = new TapGestureRecognizer();
+
+            tapTap.Tapped += tapImage_Tapped;
+
             Image attic = new Image
             {
                 Source = ImageSource.FromResource("MobileGuide.images.logo.png"),
                 HeightRequest = 100,
-                WidthRequest = 100
+                WidthRequest = 100        
+            };
+            attic.GestureRecognizers.Add(tapTap);
+
+            Button niburu = new Button
+            {
+                BackgroundColor = Color.Transparent,
+                BorderColor = Color.Transparent
+            };
+
+            Label header = new Label
+            {
+                Text = "HAIL HYDRA",
+                FontSize = 16,
+                TextColor = Color.Red,
+                FontAttributes = FontAttributes.Bold,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Start
             };
 
             Button openCatalog = new Button
             {
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                Text = "Open guides Catalog",
-                Command = new Command(async () => await open_Guides_Catalog())
+                Text = "Open guides Catalog"
+               // Command = new Command(async () => await open_Guides_Catalog())
             };
-
-            Label header = new Label
-            {
-                Text = "Hello Page",
-                FontSize = 13.5,
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Start
-            };
+            openCatalog.Clicked += async (sender, args) =>
+              {
+                  openCatalog.IsEnabled = false;
+                  await open_Guides_Catalog();
+                  openCatalog.IsEnabled = true;
+              };
 
             Label info = new Label
             {
-                Text = _todoItem.Name
+                Text = _potato.Name,
+                HorizontalOptions = LayoutOptions.Center
             };
 
-            info.SetBinding(Label.TextProperty, "CurrentGuide");
-
-            info.BindingContext = Application.Current.Properties;
-
-            var label = new Label();
-            label.Text = "0";
-            label.SetBinding(Label.TextProperty, "Name");
-            label.BindingContext = new { Name = CheckGuide() };
-
-
-
-            //+= (sender, ea) =>
-            //{
-            //    label.Text = CheckGuide();
-            //};
+            info.SetBinding(Label.TextProperty, "Name");
+            info.BindingContext = _potato;
+            
 
             Content = new StackLayout
             {
@@ -109,8 +89,7 @@ namespace MobileGuide
                     attic,
                     header,
                     openCatalog,
-                    info,
-                    label
+                    info
                 }
             };
         }
@@ -124,6 +103,25 @@ namespace MobileGuide
                 return "none";
             }
             return result.ToString();
+        }
+
+        void tapImage_Tapped(object sender,EventArgs e)
+        {
+            if(secret == 5)
+            {
+                Navigation.PushModalAsync(new Secret());
+                secret = 0;
+            }
+            else
+            {
+                secret++;
+            }
+
+        }
+
+        public void guideChange(string text)
+        {
+            _potato.Name = text;
         }
     }
 }

@@ -9,8 +9,9 @@ namespace MobileGuide
 {
     public class GuidesPage : ContentPage
     {
-        public GuidesPage()
+        public GuidesPage( MainPage that)
         {
+            //--Объявление элементов страницы
             Image attic = new Image
             {
                 Source = ImageSource.FromResource("MobileGuide.images.city_3.png"),
@@ -24,14 +25,7 @@ namespace MobileGuide
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
                 HorizontalOptions = LayoutOptions.Center
             };
-
-            var layout = new StackLayout()
-            {
-                Orientation = StackOrientation.Horizontal
-            };
-
-
-
+        
             TableView tableView = new TableView
             {
                 BackgroundColor = Color.Black,
@@ -47,19 +41,19 @@ namespace MobileGuide
                             DetailColor = Color.White,
                             Text = "Вручную созданный",
                             Detail = "Путеводитель",
-                            Command = new Command(async () => await table_Elem_Click("1"))
+                            Command = new Command(async () => await table_Elem_Click("1",that) )
                         },
-                        createTableElem("С помощью метода созданный")
+                        createTableElem("С помощью метода созданный",that)
                     }
                 },
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
             // Accomodate iPhone status bar.
-            this.Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0);
+            Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0);
 
             // Build the page.
-            this.Content = new StackLayout
+            Content = new StackLayout
             {
                 Children =
                 {
@@ -70,9 +64,13 @@ namespace MobileGuide
             };
         }
 
-        private async Task table_Elem_Click(string text)
+
+
+        private async Task table_Elem_Click(string text,MainPage that)
         {
+            that.guideChange(text);
             Application.Current.Properties["CurrentGuide"] = text;
+
             try
             {
                 await Navigation.PopModalAsync();
@@ -83,7 +81,7 @@ namespace MobileGuide
             }
         }
 
-        private ImageCell createTableElem(string text)
+        private ImageCell createTableElem(string text,MainPage that)
         {
             //Да, так работает
             return new ImageCell
@@ -93,7 +91,7 @@ namespace MobileGuide
                 DetailColor = Color.White,
                 Text = text,
                 Detail = "Путеводитель",
-                Command = new Command(async () => await table_Elem_Click("2"))
+                Command = new Command(async () => await table_Elem_Click("2", that))
             };
 
         }
