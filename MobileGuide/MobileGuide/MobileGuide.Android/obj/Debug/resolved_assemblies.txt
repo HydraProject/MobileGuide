@@ -48,5 +48,6 @@ E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\androi
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\System.Text.RegularExpressions.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\System.Collections.Concurrent.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\System.Runtime.InteropServices.dll
+E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\Mono.Security.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\System.Resources.ResourceManager.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\System.Diagnostics.Tools.dll

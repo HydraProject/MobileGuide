@@ -10,9 +10,14 @@ namespace MobileGuide
     {
         static int secret = 0;
 
-        public Options _potato = new Options();
+        public Options _appOptions = new Options();
+
         public MainPage()
         {
+            var tapTap = new TapGestureRecognizer();
+
+            tapTap.Tapped += tapImage_Tapped;
+
             async Task open_Guides_Catalog()
             {
                 try
@@ -27,12 +32,8 @@ namespace MobileGuide
 
             Application.Current.PropertyChanged += (sender, args) =>
             {
-                  _potato.Namechange(CheckGuide());
+                  _appOptions.Namechange(CheckGuide());
             };
-
-            var tapTap = new TapGestureRecognizer();
-
-            tapTap.Tapped += tapImage_Tapped;
 
             Image attic = new Image
             {
@@ -41,12 +42,6 @@ namespace MobileGuide
                 WidthRequest = 100        
             };
             attic.GestureRecognizers.Add(tapTap);
-
-            Button niburu = new Button
-            {
-                BackgroundColor = Color.Transparent,
-                BorderColor = Color.Transparent
-            };
 
             Label header = new Label
             {
@@ -74,12 +69,12 @@ namespace MobileGuide
 
             Label info = new Label
             {
-                Text = _potato.Name,
+                Text = _appOptions.Name,
                 HorizontalOptions = LayoutOptions.Center
             };
 
             info.SetBinding(Label.TextProperty, "Name");
-            info.BindingContext = _potato;
+            info.BindingContext = _appOptions;
             
 
             Content = new StackLayout
@@ -94,8 +89,6 @@ namespace MobileGuide
             };
         }
 
-        //Если есть записанный гид - возвращаем его имя
-        //Если нет - пишем "none"
         private string CheckGuide()
         {
             if(!Application.Current.Properties.TryGetValue("CurrentGuide",out object result))
@@ -121,7 +114,7 @@ namespace MobileGuide
 
         public void guideChange(string text)
         {
-            _potato.Name = text;
+            _appOptions.Name = text;
         }
     }
 }

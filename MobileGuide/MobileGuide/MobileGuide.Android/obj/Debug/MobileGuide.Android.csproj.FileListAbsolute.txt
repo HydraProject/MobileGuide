@@ -84,5 +84,3 @@ E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\bin\Debug\SlideO
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\bin\Debug\SlideOverKit.Droid.dll.mdb
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\SlideOverKit.dll.mdb
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\android\assets\SlideOverKit.Droid.dll.mdb
-E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\obj\Debug\MobileGuide.Android.dll.mdb
-E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide.Android\bin\Debug\MobileGuide.Android.dll.mdb

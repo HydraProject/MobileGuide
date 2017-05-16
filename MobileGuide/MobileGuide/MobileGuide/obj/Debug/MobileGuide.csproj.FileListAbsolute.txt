@@ -15,5 +15,3 @@ E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.dl
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.pdb
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\SlideOverKit.dll
 E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\SlideOverKit.pdb
-E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\obj\Debug\MobileGuide.dll.mdb
-E:\reps\MobileGuide\MobileGuide\MobileGuide\MobileGuide\bin\Debug\MobileGuide.dll.mdb

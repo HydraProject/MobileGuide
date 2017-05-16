@@ -9,11 +9,17 @@ namespace MobileGuide
 {
     public partial class App : Application
     {
+        public static MasterDetailPage MasterDetailPage;
+
         public App()
         {
-            InitializeComponent();
-
-            MainPage = new MobileGuide.MainPage();
+            //InitializeComponent();
+            MasterDetailPage  = new MasterDetailPage
+            {
+                Master = new MenuPage(),
+                Detail = new NavigationPage(new MainPage()),
+            };
+            MainPage = MasterDetailPage;
         }
 
         protected override void OnStart()
