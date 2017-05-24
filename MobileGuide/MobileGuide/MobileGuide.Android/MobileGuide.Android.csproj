@@ -143,7 +143,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\sine.gif" />
-    <Content Include="Resources\drawable\logo.png" />
+    <Content Include="Resources\drawable\mark.png" />
+    <Content Include="Resources\drawable\menu.png" />
+    <Content Include="Resources\drawable\settings.png" />
+    <EmbeddedResource Include="Resources\drawable\city_1.png" />
+    <EmbeddedResource Include="Resources\drawable\city_2.png" />
+    <EmbeddedResource Include="Resources\drawable\city_3.png" />
+    <Content Include="Resources\drawable\cross.png" />
+    <Content Include="Resources\drawable\heart.png" />
+    <Content Include="Resources\drawable\lock.png" />
+    <EmbeddedResource Include="Resources\drawable\logo.png" />
     <EmbeddedResource Include="Resources\drawable\thisisnotporn.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -28,7 +28,14 @@ namespace MobileGuide
                     App.MasterDetailPage.IsPresented = false;
                 })
             };
-       
+
+            var header = new BoxView
+            {
+                Color = new Color(39, 134, 171),
+                HeightRequest = 100,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand
+            };
 
             Content = new StackLayout
             {
@@ -36,14 +43,15 @@ namespace MobileGuide
                 Children = {
                     logo,
                     home,
-                new MainLink("Page A"),
-                new MainLink("Page B"),
-                new MainLink("Page C"),
+                new MainLink("Общая информация"),
+                new MainLink("Достопримечательности"),
+                new MainLink("Отдых"),
             }
             };
             Title = "Master";
-            BackgroundColor = Color.Gray.WithLuminosity(0.9);
-            Icon = Device.OS == TargetPlatform.iOS ? "menu.png" : "images/menu.png";
+            BackgroundColor = ((Color.Red.WithHue(0.5638)).WithSaturation(0.73)).WithLuminosity(0.794);
+
+            Icon = Device.OS == TargetPlatform.iOS ? "menu.png" : "menu.png";
         }
     }
 }

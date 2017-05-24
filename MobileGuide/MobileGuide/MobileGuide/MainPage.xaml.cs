@@ -8,12 +8,15 @@ namespace MobileGuide
 {
     public partial class MainPage : ContentPage
     {
+        
         static int secret = 0;
 
         public Options _appOptions = new Options();
 
         public MainPage()
         {
+            BackgroundColor = ((Color.Red.WithHue(0.5638)).WithSaturation(0.73)).WithLuminosity(0.794);
+
             var tapTap = new TapGestureRecognizer();
 
             tapTap.Tapped += tapImage_Tapped;

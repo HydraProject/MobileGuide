@@ -12,7 +12,7 @@ namespace MobileGuide
     {
         public MainLink(string name)
         {
-            Image = "images\\logo.png";
+            Image = "logo.png";
             Text = name;
             Command = new Command(o => {
                 App.MasterDetailPage.Detail = new NavigationPage(new LinkPage(name));
