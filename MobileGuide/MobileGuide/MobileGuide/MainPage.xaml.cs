@@ -11,31 +11,20 @@ namespace MobileGuide
         
         static int secret = 0;
 
-        public Options _appOptions = new Options();
-
         public MainPage()
         {
+            
+            Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0);
             BackgroundColor = ((Color.Red.WithHue(0.5638)).WithSaturation(0.73)).WithLuminosity(0.794);
 
             var tapTap = new TapGestureRecognizer();
 
             tapTap.Tapped += tapImage_Tapped;
 
-            async Task open_Guides_Catalog()
-            {
-                try
-                {
-                    await Navigation.PushModalAsync(new GuidesPage(this));
-                }
-                catch (Exception e)
-                {
-                    await DisplayAlert("error", e.Message, "cancer");
-                }
-            }
 
             Application.Current.PropertyChanged += (sender, args) =>
             {
-                  _appOptions.Namechange(CheckGuide());
+                  App._appOptions.Namechange(CheckGuide());                
             };
 
             Image attic = new Image
@@ -56,28 +45,16 @@ namespace MobileGuide
                 VerticalOptions = LayoutOptions.Start
             };
 
-            Button openCatalog = new Button
-            {
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
-                Text = "Open guides Catalog"
-               // Command = new Command(async () => await open_Guides_Catalog())
-            };
-            openCatalog.Clicked += async (sender, args) =>
-              {
-                  openCatalog.IsEnabled = false;
-                  await open_Guides_Catalog();
-                  openCatalog.IsEnabled = true;
-              };
+
 
             Label info = new Label
             {
-                Text = _appOptions.Name,
+                Text = App._appOptions.Name,
                 HorizontalOptions = LayoutOptions.Center
             };
 
             info.SetBinding(Label.TextProperty, "Name");
-            info.BindingContext = _appOptions;
+            info.BindingContext = App._appOptions;
             
 
             Content = new StackLayout
@@ -86,7 +63,6 @@ namespace MobileGuide
                 {
                     attic,
                     header,
-                    openCatalog,
                     info
                 }
             };
@@ -112,12 +88,6 @@ namespace MobileGuide
             {
                 secret++;
             }
-
-        }
-
-        public void guideChange(string text)
-        {
-            _appOptions.Name = text;
         }
     }
 }

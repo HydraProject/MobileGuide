@@ -9,7 +9,7 @@ namespace MobileGuide
 {
     public class GuidesPage : ContentPage
     {
-        public GuidesPage( MainPage that)
+        public GuidesPage( MenuPage that)
         {
             //--Объявление элементов страницы
             Image attic = new Image
@@ -28,7 +28,7 @@ namespace MobileGuide
         
             TableView tableView = new TableView
             {
-                BackgroundColor = Color.Black,
+                BackgroundColor = ((Color.Red.WithHue(0.5638)).WithSaturation(0.73)).WithLuminosity(0.794),
                 Intent = TableIntent.Form,
                 Root = new TableRoot
                 {
@@ -42,15 +42,14 @@ namespace MobileGuide
                             Text = "Вручную созданный",
                             Detail = "Путеводитель",
                             Command = new Command(async () => await table_Elem_Click("1",that) )
-                        },
-                        createTableElem("С помощью метода созданный",that)
+                        }
                     }
                 },
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
             // Accomodate iPhone status bar.
-            Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0);
+            //Padding = new Thickness(0, Device.OnPlatform(20,0,0), 0, 0);
 
             // Build the page.
             Content = new StackLayout
@@ -63,10 +62,9 @@ namespace MobileGuide
                 }
             };
         }
+        
 
-
-
-        private async Task table_Elem_Click(string text,MainPage that)
+        private async Task table_Elem_Click(string text,MenuPage that)
         {
             that.guideChange(text);
             Application.Current.Properties["CurrentGuide"] = text;
@@ -79,21 +77,6 @@ namespace MobileGuide
             {
                 await DisplayAlert("error", e.Message, "cancer");
             }
-        }
-
-        private ImageCell createTableElem(string text,MainPage that)
-        {
-            //Да, так работает
-            return new ImageCell
-            {
-                ImageSource = ImageSource.FromResource("MobileGuide.images.city_2.png"),
-                TextColor = Color.White,
-                DetailColor = Color.White,
-                Text = text,
-                Detail = "Путеводитель",
-                Command = new Command(async () => await table_Elem_Click("2", that))
-            };
-
         }
     }
 }

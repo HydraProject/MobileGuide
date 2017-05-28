@@ -12,6 +12,8 @@ namespace MobileGuide
     {
         public MainLink(string name)
         {
+            BorderColor = Color.Transparent;
+            BackgroundColor = Color.Transparent;
             Image = "logo.png";
             Text = name;
             Command = new Command(o => {

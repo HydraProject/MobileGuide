@@ -10,9 +10,11 @@ namespace MobileGuide
     public partial class App : Application
     {
         public static MasterDetailPage MasterDetailPage;
+        public static Options _appOptions = new Options();
 
         public App()
         {
+           
             //InitializeComponent();
             MasterDetailPage  = new MasterDetailPage
             {
@@ -20,6 +22,8 @@ namespace MobileGuide
                 Detail = new NavigationPage(new MainPage()),
             };
             MainPage = MasterDetailPage;
+            MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, Color.Black);
+            MainPage.SetValue(NavigationPage.BarTextColorProperty, Color.White);
         }
 
         protected override void OnStart()
